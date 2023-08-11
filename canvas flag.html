@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flag with Three Colors</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Flag with Three Colors</h1>
+    <canvas id="flagCanvas" width="500" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('flagCanvas');
+        const context = canvas.getContext('2d');
+
+        // Draw the flag
+
+        // Blue stripe
+        context.fillStyle = 'orange';
+        context.fillRect(50,50,150,50);
+         // White stripe
+         context.fillStyle = 'white';
+         context.fillRect(50,100,150,50);
+ 
+ 
+         // Green stripe
+         context.fillStyle = 'green';
+         context.fillRect(50,150,150,50);
+         context.fillStyle='black';       
+         context.fillRect(50,50,4,600)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Methods Example</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Methods Example</h1>
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+        context.fillStyle = 'blue';
+        context.fillRect(50, 50, 100, 75);
+        context.beginPath();
+        context.arc(200, 150, 50, 0, Math.PI * 2);
+        context.strokeStyle = 'green';
+        context.lineWidth = 3;
+        context.stroke();
+        canvas.addEventListener('click', (event) => {
+            const x = event.clientX - canvas.getBoundingClientRect().left;
+            const y = event.clientY - canvas.getBoundingClientRect().top;
+            context.beginPath();
+            context.arc(x, y, 10, 0, Math.PI * 2);
+            context.fillStyle = 'purple';
+            context.fill();
+        });
+    </script>
+</body>
+</html>
